@@ -14,7 +14,7 @@ class User(models.Model):
     email = models.EmailField()
 
     def __str__(self):
-        return "%s (%s)" % (username, email)
+        return "%s (%s)" % (self.username, self.email)
 
 
 class DoItem(models.Model):
@@ -26,4 +26,4 @@ class DoItem(models.Model):
     date_due = models.DateTimeField('date due')
 
     def __str__(self):
-        return "%s [%s]" % (subject, str(category))
+        return "%s [%s]" % (self.subject, str(self.category))
