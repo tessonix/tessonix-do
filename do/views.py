@@ -18,4 +18,4 @@ def db(request):
     todos = DoItem.objects.all()
     categories = Category.objects.all()
 
-    return render(request, 'db.html', {'users': users, 'todos': todos, 'categories': categories}
+    return render(request, 'db.html', {'users': users, 'todos': todos, 'categories': categories})
