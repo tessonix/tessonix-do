@@ -3,8 +3,16 @@
 
 <ul>
 
-{% for greeting in greetings %}
-    <li>{{ greeting.when }}</li>
+{% for user in users %}
+    <li>{{ user }}</li>
+{% endfor %}
+
+{% for category in categories %}
+    <li>{{ category }}</li>
+{% endfor %}
+
+{% for todo in todos %}
+    <li>{{ todo }}</li>
 {% endfor %}
 
 </ul>

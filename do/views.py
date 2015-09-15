@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Greeting
+from .models import Category, User, DoItem
 
 import os
 import requests
@@ -13,11 +13,9 @@ def index(request):
 
 
 def db(request):
+    """ Print out the state of the database as it currently stands. """
+    users = User.objects.all()
+    todos = DoItem.objects.all()
+    catogories = Category.objects.all()
 
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, 'db.html', {'greetings': greetings})
-
+    return render(request, 'db.html', {'users': users, 'todos': todos, 'categories': categories})
